@@ -28,7 +28,7 @@ class ArticleController extends Controller
             'published_at' => 'required|date|date_format:Y-m-d'
         ]);
         $article = Article::create($request->all());
-
+        unset($article->id);
         return response()->json($article, 201);
     }
 
