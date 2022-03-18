@@ -4,14 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Article;
-use Illuminate\Support\Facades\Validator as FacadesValidator;
-use Illuminate\Validation\Validator;
+use Illuminate\Support\Facades\Validator;
 
 class ArticleController extends Controller
 {
     public function store(Request $request)
     {
-        $validator = FacadesValidator::make($request->all(),[
+        $validator = Validator::make($request->all(),[
             'title' => 'required|max:30',
             'content' => 'required',
             'author' => 'required',

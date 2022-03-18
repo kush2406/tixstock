@@ -27,4 +27,4 @@ Route::post('articles', [ArticleController::class, 'store']);
 
 Route::get('movie-count',[MoviesController::class, 'getMovieCount']);
 
-Route::get('event',[EventController::class,'fireEvent']);
+Route::post('event',[EventController::class,'fireEvent']);
